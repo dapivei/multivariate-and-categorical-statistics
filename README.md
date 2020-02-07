@@ -29,3 +29,7 @@ Additional useful links for differente topics covered during class:
 
 - [Applied Statistics](http://www.maths.usyd.edu.au/u/jormerod/stat3914/STAT3914_Notes_Full.pdf)
 
+**Learn basic SPSS functionalities**
+
+- [Basic SPSS](https://www.youtube.com/watch?v=8_4Z3iKzE8M&list=PLVI_iGT5ZuRmXlbuwMKi04R6Oe1G3De8G)
+
