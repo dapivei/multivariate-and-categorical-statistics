@@ -5,6 +5,10 @@ Class notes, homeworks, practices and helpful links employed during the course i
 
 Additional useful links for differente topics covered during class:
 
+**Linear Algebra and Matrix Theory**
+
+- [Lecture 33 : Positive Definite Matrices](https://www.math.utah.edu/~zwick/Classes/Fall2012_2270/Lectures/Lecture33_with_Examples.pdf)
+
 **Multivariate Distribution**
 
 - [The Multivariate Gaussian Distribution](http://cs229.stanford.edu/section/gaussians.pdf)
