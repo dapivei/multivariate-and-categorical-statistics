@@ -19,5 +19,9 @@ Additional useful links for differente topics covered during class:
 
 - [Lecture 23: The MGF of the Normal, and Multivariate Normals](https://courses.cs.washington.edu/courses/cse312/19sp/schedule/lecture23.pdf)
 
+**Certain Proofs**
 
+- [Multivariate normal distribution, UCLA](http://www.stat.ucla.edu/~nchristo/statistics_c173_c273/c173_c273_multivariate_normal.pdf)
+
+-[Applied Statistics](http://www.maths.usyd.edu.au/u/jormerod/stat3914/STAT3914_Notes_Full.pdf)
 
