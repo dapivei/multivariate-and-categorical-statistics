@@ -23,5 +23,5 @@ Additional useful links for differente topics covered during class:
 
 - [Multivariate normal distribution, UCLA](http://www.stat.ucla.edu/~nchristo/statistics_c173_c273/c173_c273_multivariate_normal.pdf)
 
--[Applied Statistics](http://www.maths.usyd.edu.au/u/jormerod/stat3914/STAT3914_Notes_Full.pdf)
+- [Applied Statistics](http://www.maths.usyd.edu.au/u/jormerod/stat3914/STAT3914_Notes_Full.pdf)
 
