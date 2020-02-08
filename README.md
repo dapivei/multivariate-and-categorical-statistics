@@ -3,6 +3,12 @@
 ***
 Class notes, homeworks, practices and helpful links employed during the course imparted by Abdolnasser Sadeghkhani.
 
+
+Outline of topics covered per class:
+
++ Review of Matrix and Linear Algebra
++ Review of Probability and Statistic Concepts
+
 Additional useful links for differente topics covered during class:
 
 **Linear Algebra and Matrix Theory**
