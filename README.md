@@ -8,6 +8,8 @@ Outline of topics covered per class:
 
 + Review of Matrix and Linear Algebra
 + Review of Probability and Statistic Concepts
++ Multivariate Normal Distribution
+
 
 Additional useful links for differente topics covered during class:
 
