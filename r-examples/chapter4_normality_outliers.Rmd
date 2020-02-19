@@ -1,0 +1,77 @@
+---
+title: "Chapter 4: Search of Multivariate Outliers and Multivariate Normality"
+
+output: html_notebook
+---
+
+
+***
+
+We use the ramus bone data set of Table 3.7 to illustrate a search for multivariate outliers, while at the same time checking for multivariate normality. An examination of each column of Table 3.7 does not reveal any apparent univariate outliers. To check for multivariate outliers, we first calculate $D_{i}^2$ in (4.27) for each observation vector. The results are given in Table 4.1. We see that $D_{9}^2$, $D_{12}^2$ and $D_{20}^2$ seem to stand out as possible outliers. In Table A.6, the upper $5%$ critical value for the maximum value, $D_{20}^2$ is given as $11.63$. In our case, the largest $D_{i}^2$ is = $11.03$, which does not exceed the critical value. This does not surprise us, since the test was designed to detect a single outlier, and we may have as many as three.
+
+
+We compute $u_{i}$, and $v_{i}$ in (4.28) and (4.29) and plot them in Figure 4.10. The figure shows a departure from linearity due to three values and possibly a fourth.
+
+
+We next calculate $b_{1,p}$ abd $b_{2,p}$ as given by (4.36) and (4.37).
+
+$$b_{1,p}=11.338$$
+ 
+$$b_{2,p}=28.884$$
+
+In Table A.5, the upper $.01$ critical value for $b_{1,p}$ is $9.9$; the upper $.005$ critical value for $b_{2,p}$ is $27.1$. Thus both $b_{1,p}$ and $b_{2,p}$ exceed their critical values, and we have significant skewness and kurtosis, apparently caused by the three observations with large values of $D_{i}^2$.
+
+The bivariate scatterplots are given in Figure 4.11. Three values are clearly separate from the other observations in the plot of $y_{1}$ versus $y_{4}$. In Table 3.7, the $9th$, $12th$, and $20th$ values of  $y_{4}$  are not unusual, nor are the 9th, 12th, and 20th values of  $y_{1}$. However, the increase from  $y_{1}$ to  $y_{4}$  is exceptional in each case. If these values are not due to errors in recording the data and if this sample is representative, then we appear to have a mixture of two populations. This should be taken into account in making inferences.
+
+
+```{r}
+library(ggplot2)
+```
+
+
+```{r}
+##EXAMPLE 4.6.2 page:115
+
+##--------------------------------------------------------------------------
+#DATA: T3_7_BONE.txt"
+x=read.table(file.choose())
+```
+
+```{r}
+x
+```
+
+
+```{r}
+pairs(x,Pch=16)
+d2=mahalanobis(x,colMeans(x),cov(x))
+n=nrow(x)
+p=ncol(x)
+u=n*d2/((n-1)^2)
+ui=sort(u)
+i=c(1:n)
+alfa=(p-2)/(2*p)
+beta=(n-p-3)/(2*(n-p-1))
+pi=(i-alfa)/(n-alfa-beta+1)
+a=p/2
+b=(n-p-1)/2
+vi=qbeta(pi,a,b)
+plot(ui,vi)
+##-------------------------------------------------------------------
+max_d2=max(d2)
+#-----------------------------------------------------------------
+one=matrix(1,n,p)
+x=as.matrix(x)
+g=(x-one%*%diag(colMeans(x)))%*%solve(((n-1)/n)*cov(x))%*%t(x-one%*%diag(colMeans(x)))
+b1p=sum(g**3)/(n**2)
+b2p=sum(diag(g)**2)/n
+#----------------------------------------------------------------
+w=1-(n*max_d2/((n-1)**2))
+max_f=((n-p-1)/p)*(1/w-1)
+qf(0.95,p,n-p-1)
+
+
+
+
+```
+

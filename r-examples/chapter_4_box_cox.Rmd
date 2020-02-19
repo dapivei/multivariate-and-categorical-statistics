@@ -1,0 +1,88 @@
+---
+title: "Chapter 4: Part 1"
+output: html_notebook
+---
+
+#### Example 4.5.2 (page:110)
+We use the soil richness data in Table 3.3 to illustrate the process of transforming data to appear more normal. The top row of Figure 4.8 illustrates distributions for the concentrations of $Fe$ $K$ and $Mg$. Note that $Fe$ appears relatively normal, with $Mg$ exihibiting moderate right-skewness and $K$ exhibiting extreme right-skewness.
+
+Applying the Box-Cox approach discussed in Section 4.5.1, we obtain $\lambda$ values of $1.0$, $- 0.3$ , and $0.1$, respectively. The middle row of Figure 4.8 shows the plot of $l(\lambda)$ versus $\lambda$ for each variable. The distribution for iron (Fe) concentrations is at the near-optimal transformation for appearing normal. Potassium (K) requires a transformation that is more extreme than the log transformation, while magnesium (Mg) needs a transformation that is slightly less extreme than the log transformation. The bottom row of Figure 4.8 shows the distributions of the three elements after applying the optimal univariate Box-Cox transformation.
+
+
+### Cox-box transformation
+
+
+```{r}
+##--------------------------------------------------------------------------
+
+##EXAMPLE 4.5.2 page:110
+
+##--------------------------------------------------------------------------
+##cox-box transformation
+library(car)
+#"DATA:  T3_3_BAKER.txt"
+#Table is on Page 61 pf the Rencher's textbook
+x=read.table(file.choose())
+## The Box-Cox family(family="bcPower") requires the responses to be strictly positive
+#col7: Fe, col8:K and col9:MG
+
+```
+
+
+```{r}
+x
+```
+
+
+```{r}
+a1=powerTransform(x[c(7,8,9)])
+a1
+trans1=bcPower(x[c(7,8,9)],coef(a1))         ##transfomed data x7,x8 and x9 (3-variates)
+##--------------------------------------------------------------------
+a2=powerTransform(x[7]) 
+a2
+trans2=bcPower(x[7],coef(a2))                ##transfomed data x7 (univarite)
+##-------------------------------------------------------------------------
+a3=powerTransform(x[8]) 
+a3
+trans3=bcPower(x[8],coef(a3))                ##transfomed data x8 (univarite)
+##--------------------------------------------------------------------
+##Three familes of transformations
+
+#a4=powerTransform(x[9],family="bcnPower" )
+
+#trans4=bcnPower(x[9],coef(a4))
+#im having problems with the box cos with negatives method
+##transfomed data x9
+a5=powerTransform(x[9],family="yjPower" )
+trans5=yjPower(x[9],coef(a5))
+
+##transfomed data x9
+a6=powerTransform(x[9],family="bcPower" )
+trans6=bcPower(x[9],coef(a6))                ##transfomed data x9
+
+
+##--------------------------------------------------------------------------
+
+
+```
+
+```{r}
+a5
+trans5
+
+```
+
+
+```{r}
+a4
+trans6
+```
+
+We apply the multivariate Box-Cox approach discussed in Section 4.5.2 by considering an array of values for  $\lambda$ = ($\lambda_{Fe}, \lambda_{K}, \lambda_{Mg}$), such that $\lambda_{Fe} \in$ (0.5, 0.6,..., 1.5),  $\lambda_{K} \in$ (-0.8, -0.7,..., 0.2), and $\lambda_{Mg} \in$€ (-0.4, -0.3,..., 0.6). The value of $\lambda$ that maximizes $l(\lambda)$ in (4.43) is $\lambda$  = (1.0, -0.4, 0.2), which is predictably similar to the transformation obtained by applying the optimal univariate transformation to each of the three variables.
+
+
+
+Notes:
+
+About Power Transform: In statistics, a power transform is a family of functions that are applied to create a monotonic transformation of data using power functions. This is a useful data transformation technique used to stabilize variance, make the data more normal distribution-like, improve the validity of measures of association such as the Pearson correlation between variables and for other data stabilization procedures. 
