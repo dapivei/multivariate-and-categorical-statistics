@@ -41,3 +41,8 @@ Additional useful links for differente topics covered during class:
 
 - [Basic SPSS](https://www.youtube.com/watch?v=8_4Z3iKzE8M&list=PLVI_iGT5ZuRmXlbuwMKi04R6Oe1G3De8G)
 
+
+**Solved problems of multivariate statistics**
+
+- [Multivariate Exercises](https://www.stt.msu.edu/users/pszhong/STT843-HW1-Solution-YiChen.pdf)
+
