@@ -44,5 +44,10 @@ Additional useful links for differente topics covered during class:
 
 **Solved problems of multivariate statistics**
 
-- [Multivariate Exercises](https://www.stt.msu.edu/users/pszhong/STT843-HW1-Solution-YiChen.pdf)
+- [Multivariate Exercises- Homework 1](https://www.stt.msu.edu/users/pszhong/STT843-HW1-Solution-YiChen.pdf)
+
+- [Multivariate Exercises- Homework 2](https://www.stt.msu.edu/users/pszhong/STT843-HW2-Solution-YiChen.pdf)
+
+- [Multivariate Exercises- Homework 3](https://www.stt.msu.edu/users/pszhong/STT843-HW3-Solution-YiChen.pdf)
+
 
